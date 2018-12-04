@@ -1,0 +1,38 @@
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #007bff!important; margin-bottom: 50px; ">
+      <a class="navbar-brand" href="/" style="color: white;">Diccionario</a>
+          <%= form_tag('/words', method: :get, class: "form-inline flex-nowrap mx-0 mx-lg-auto rounded p-1") do %>
+            <%= text_field_tag :name,params[:name], placeholder: 'Buscar..',class: 'form-control mr-sm-2' %>
+            <%= button_tag(type: 'submit', class: "btn btn-light") do %>
+              <i class="fas fa-search"></i> Buscar
+            <% end%>
+          <% end%>
+  </nav>
+<p id="notice"><%= notice %></p>
+<h4 style="padding-left: 20px;">Resultados</h4>
+<hr>
+<div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Palabra</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @words.each do |word| %>
+          <tr>
+            <td><%= word.name %></td>
+            <td><%= word.description %></td>
+            <!--<td><%= link_to 'Show', word %></td>
+            <td><%= link_to 'Edit', edit_word_path(word) %></td>
+            <td><%= link_to 'Destroy', word, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+              --!>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+<br>
+
+<%= link_to 'Agregar nueva palabra', new_word_path, style: 'padding-left: 20px;' %>
