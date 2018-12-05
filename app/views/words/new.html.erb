@@ -1,5 +1,10 @@
-<h2>Agregar palabra</h2>
 
-<%= render 'form', word: @word %>
+<%= render 'navbar', word: @word %>
 
-<%= link_to 'Back', words_path %>
+<div class = "container justify-start" style="align-items:center;">
+        <h3 style = "margin-bottom: 25px;">Agregar palabra</h3>
+
+        <%= render 'form', word: @word %>
+
+        <%= link_to 'Regresar', words_path %>
+</div> 

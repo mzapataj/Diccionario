@@ -3,7 +3,7 @@ class Word < ApplicationRecord
 	
 	def self.search(search)
 		if search
-			words = Word.where(name: search)	
+			words = Word.where(regexp('^'+search,"name"))	
 		else
 			Word.all
 		end

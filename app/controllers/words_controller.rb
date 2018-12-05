@@ -8,7 +8,6 @@ class WordsController < ApplicationController
   end
 
   def home
-    @words = Word.search(params[:name])
   end
   # GET /words/1
   # GET /words/1.json
