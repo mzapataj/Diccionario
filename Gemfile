@@ -1,18 +1,21 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 
 gem 'coffee-script-source', '1.8.0'
-
 #Bootstrap
 gem 'bootstrap', '~> 4.1.3'
 
+gem 'will_paginate', '~> 3.1.1'
+gem 'will_paginate-bootstrap'
+gem 'will_paginate-bootstrap4'
+
 #jquery
 gem 'autoprefixer-rails', '8.6.5'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

@@ -4,7 +4,7 @@ class WordsController < ApplicationController
   # GET /words
   # GET /words.json
   def index
-    @words = Word.search(params[:name])
+    @words = Word.search(params[:name]).paginate(page: params[:page],per_page: 6)
   end
 
   def home
@@ -30,7 +30,7 @@ class WordsController < ApplicationController
 
     respond_to do |format|
       if @word.save
-        format.html { redirect_to @word, notice: 'Word was successfully created.' }
+        format.html { redirect_to @word, notice: 'La palabra se ha agregado correctamente.' }
         format.json { render :show, status: :created, location: @word }
       else
         format.html { render :new }
